@@ -1,0 +1,50 @@
+body {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 90%;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: 20px;
+}
+
+.dog_Name {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .conteiner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+.select {
+  margin-bottom: 100px;
+}
+
+.image {
+  max-width: 300px;
+  position: relative;
+  transition: all 400ms;
+  width: 100px;
+}
+@media (min-width: 768px) {
+  .image {
+    width: 400px;
+    height: 4px;
+  }
+}
+
+.image:hover {
+  transform: translateY(-2in);
+}
+
+.razas {
+  list-style: none;
+  margin-top: 350px;
+  position: absolute;
+}
