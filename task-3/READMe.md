@@ -6,5 +6,3 @@
 
 > - cd vite-project
 > - npm run dev
-
-> _Everything_ is going according to **plan**.
