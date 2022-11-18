@@ -1,6 +1,7 @@
 import React from "react";
 import useBudget from "../hooks/useBudget";
 import logo from "../assets/61wbV8oqAbL.jpg";
+
 export interface producInterface {
   id: number;
   Product_name: string;
@@ -14,7 +15,7 @@ export const Product = () => {
 
   return (
     <>
-      <h1>productos</h1>
+      <h1>Productos</h1>
 
       <div className="product-container">
         {product.map((p: producInterface) => (

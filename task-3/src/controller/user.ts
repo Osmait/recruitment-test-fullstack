@@ -20,7 +20,7 @@ export class User {
           password: encryptPassword(password),
         },
       });
-
+      data.password = "";
       res.status(201).json({
         data,
       });

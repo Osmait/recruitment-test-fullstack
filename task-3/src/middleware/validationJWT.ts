@@ -19,7 +19,7 @@ export const validateJWT = async (
   next: NextFunction
 ) => {
   const token = req.header("x-token");
-  console.log(token);
+
   if (!token) {
     return res.status(401).json({
       msg: "Token dont exist ",

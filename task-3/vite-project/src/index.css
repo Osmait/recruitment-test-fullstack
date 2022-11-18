@@ -51,24 +51,70 @@ img {
   display: block;
 }
 
+.alerta {
+  background-color: red;
+  color: white;
+  border-radius: 0.5rem;
+  padding: 2rem;
+}
+
 .contenedor {
   max-width: 120rem;
   margin: 0 auto;
   width: 90%;
 }
+.contenedor-auth {
+  max-width: 120rem;
+  margin: 0 auto;
+  width: 90%;
+  display: grid;
+  place-items: center;
+}
+.contenedor_login {
+  margin-top: 20rem;
+}
+.login {
+  display: flex;
+  flex-direction: column;
+}
+
+.login_input {
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 0.4rem;
+  border: 0.1rem solid;
+}
+.login_submit {
+  margin-top: 1rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: 0.1rem solid;
+}
+
+.login_submit:hover {
+  background-color: #17bcf0;
+}
 
 .product-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 5rem;
+  grid-template-columns: repeat(8, 30rem);
+  column-gap: 4rem;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-snap-align: calc(50%);
 }
 .imagen {
+  display: flex;
   width: 200px;
   height: 200px;
+  align-items: center;
+  justify-content: center;
+
+  margin-left: 10rem;
 }
 .product {
   width: 40rem;
-  border-radius: 5rem;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
   text-align: center;
 }

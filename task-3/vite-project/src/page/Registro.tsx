@@ -1,12 +1,10 @@
 import axios from "axios";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 import { alertaInterface, errorInterfase } from "./Login";
 
 export const Registro = () => {
-  const [nombre, setNombre] = useState("");
-  const [apellido, setApellido] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [alerta, setAlerta] = useState({});
@@ -15,7 +13,7 @@ export const Registro = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if ([email, password, nombre, apellido].includes("")) {
+    if ([email, password].includes("")) {
       setAlerta({
         msg: "Todos los Campos son Obligatorios",
         error: true,
@@ -26,11 +24,9 @@ export const Registro = () => {
     const user = {
       email,
       password,
-      first_name: nombre,
-      last_name: apellido,
     };
     try {
-      const url = `${import.meta.env.VITE_URL_API}api/user`;
+      const url = `http://127.0.0.1:3000/api/user`;
       const { data } = await axios.post(url, user);
 
       setAlerta({});
@@ -48,31 +44,17 @@ export const Registro = () => {
   const { msg } = alerta as alertaInterface;
 
   return (
-    <div>
+    <div className="contenedor-auth login_container contenedor_login">
       <h1>Registro</h1>
       <form className="login" onSubmit={handleSubmit}>
         {msg && <p className="alerta">{msg}</p>}
-        <label>Nombre</label>
-        <input
-          className="login_input"
-          type={"text"}
-          value={nombre}
-          onChange={(e) => setNombre(e.target.value)}
-        />
-
-        <label>Apellidos</label>
-        <input
-          className="login_input"
-          type={"text"}
-          value={apellido}
-          onChange={(e) => setApellido(e.target.value)}
-        />
 
         <label>Email</label>
         <input
           className="login_input"
           type={"text"}
           value={email}
+          placeholder="Email"
           onChange={(e) => setEmail(e.target.value)}
         />
 
@@ -81,12 +63,14 @@ export const Registro = () => {
           className="login_input"
           type={"password"}
           value={password}
+          placeholder="Password"
           onChange={(e) => setPassword(e.target.value)}
         />
 
         <button className="login_submit" type={"submit"}>
           Registrar
         </button>
+        <Link to={"/login"}>Login</Link>
       </form>
     </div>
   );

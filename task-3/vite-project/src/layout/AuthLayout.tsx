@@ -1,14 +1,11 @@
-import { Outlet } from "react-router-dom"
-
+import { Outlet } from "react-router-dom";
 
 export const AuthLayout = () => {
   return (
     <>
-    
-    <section className="contenedor contenedor_login">
-
-    <Outlet/>
-    </section>
+      <section className="contenedor-auth contenedor_login">
+        <Outlet />
+      </section>
     </>
-  )
-}
+  );
+};

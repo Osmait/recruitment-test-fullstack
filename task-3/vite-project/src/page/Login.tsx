@@ -55,6 +55,7 @@ export const Login = () => {
 
   return (
     <div className="login_container">
+      <h1>Login</h1>
       <form className="login" onSubmit={handleSubmit}>
         {msg && <p className="alerta">{msg}</p>}
         <label htmlFor="email">Email</label>
